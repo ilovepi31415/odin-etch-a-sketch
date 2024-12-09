@@ -2,9 +2,16 @@ const board = document.querySelector('.board');
 const changeDimensions = document.querySelector('#dimensions');
 let pixels = [];
 let sideLength = 16;
+let randomColors = false;
 
-document.addEventListener('dragstart', function(e) {
+document.addEventListener('dragstart', e => {
     e.preventDefault();
+});
+
+document.addEventListener('keydown', e => {
+    if (e.key === 'c') {
+        randomColors = !randomColors;
+    }
 });
 
 function makegrid(n) {
@@ -25,10 +32,16 @@ function makegrid(n) {
 function mouseover(e) {
     if (e.buttons == 1) {
         e.target.style.backgroundColor = 'white';
+        return;
     }
-    else {
-        e.target.style.backgroundColor = 'black';
+    if (randomColors) {
+        let red = (Math.random() * 256) % 256;
+        let green = (Math.random() * 256) % 256;
+        let blue = (Math.random() * 256) % 256;
+        e.target.style.backgroundColor = `rgb(${red}, ${green}, ${blue})`;
+        return;
     }
+    e.target.style.backgroundColor = 'black';
 }
 
 changeDimensions.addEventListener('click', () => {
@@ -41,7 +54,6 @@ changeDimensions.addEventListener('click', () => {
         alert('ERROR: Input must be an integer 1-100 inclusive');
     }
 });
-
 
 // Initial page load
 makegrid(sideLength);
