@@ -6,6 +6,8 @@ body {
     justify-content: center;
     align-items: center;
     gap: 16px;
+    cursor: default;
+    user-select: none;
 }
 
 .board {

@@ -3,6 +3,10 @@ const changeDimensions = document.querySelector('#dimensions');
 let pixels = [];
 let sideLength = 16;
 
+document.addEventListener('dragstart', function(e) {
+    e.preventDefault();
+});
+
 function makegrid(n) {
     board.replaceChildren();
     for (i = 0; i < n; i++) {
