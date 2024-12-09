@@ -8,6 +8,7 @@ body {
     gap: 16px;
     cursor: default;
     user-select: none;
+    font-family: 'Courier New', Courier, monospace;
 }
 
 .board {
@@ -35,4 +36,21 @@ body {
     background-color: white;
     border: 1px solid black;
     margin: 0;
+}
+
+#title {
+    font-size: 48px;
+}
+
+#dimensions {
+    border: none;
+    background-color: white;
+    padding: 8px;
+    border-radius: 12px;
+    font-family: 'Courier New', Courier, monospace;
+    border: 2px solid black;
+}
+
+#description {
+    text-align: center;
 }
