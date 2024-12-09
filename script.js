@@ -1,8 +1,10 @@
 const board = document.querySelector('.board');
+const changeDimensions = document.querySelector('#dimensions');
 let pixels = [];
 let sideLength = 16;
 
 function makegrid(n) {
+    board.replaceChildren();
     for (i = 0; i < n; i++) {
         let row = document.createElement('div');
         row.classList.add('row');
@@ -24,5 +26,11 @@ function mouseover(e) {
         e.target.style.backgroundColor = 'black';
     }
 }
+
+changeDimensions.addEventListener('click', () => {
+    let choice = prompt('Choose dimensions:');
+    let n = +choice;
+    makegrid(n);
+});
 
 makegrid(sideLength);
