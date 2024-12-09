@@ -33,8 +33,15 @@ function mouseover(e) {
 
 changeDimensions.addEventListener('click', () => {
     let choice = prompt('Choose dimensions:');
-    let n = +choice;
-    makegrid(n);
+    let parsed = parseInt(choice, 10);
+    if (!isNaN(parsed) && parsed > 0 && parsed <= 100){
+        makegrid(parsed);
+    }
+    else {
+        alert('ERROR: Input must be an integer 1-100 inclusive');
+    }
 });
 
+
+// Initial page load
 makegrid(sideLength);
