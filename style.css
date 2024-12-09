@@ -2,13 +2,15 @@ body {
     width: 100vw;
     height: 100vh;
     display: flex;
+    flex-direction: column;
     justify-content: center;
     align-items: center;
+    gap: 16px;
 }
 
-.container {
-    width: 300px;
-    height: 300px;
+.board {
+    width: 600px;
+    height: 600px;
     display: flex;
     flex-direction: column;
     justify-content: stretch;
